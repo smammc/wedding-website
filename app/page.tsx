@@ -1,132 +1,196 @@
 'use client'
-import { useEffect, useState } from 'react'
 import Image from 'next/image'
+import Slideshow from './Slideshow'
 
 export default function Home() {
-  // Countdown logic
-  // Remove weddingDate from here
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 })
-
-  useEffect(() => {
-    const weddingDate = new Date('2026-04-18T15:00:00')
-    const timer = setInterval(() => {
-      const now = new Date()
-      const diff = weddingDate.getTime() - now.getTime()
-      if (diff > 0) {
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24))
-        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24)
-        const minutes = Math.floor((diff / (1000 * 60)) % 60)
-        const seconds = Math.floor((diff / 1000) % 60)
-        setTimeLeft({ days, hours, minutes, seconds })
-      } else {
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 })
-      }
-    }, 1000)
-    return () => clearInterval(timer)
-  }, [])
-
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-8">
-      <div className="mb-8 w-full max-w-3xl">
-        <Image
-          src="/MeS-1.jpeg"
-          alt="Hero"
-          width={1200}
-          height={600}
-          className="h-[400px] w-full rounded-xl object-cover"
-          priority
-        />
+      <div className="mb-8 w-full max-w-5xl">
+        <Slideshow />
       </div>
-      <div className="mb-12 max-w-2xl text-center">
-        <h1 className="mb-2 text-5xl font-bold">Maria e Sebastião</h1>
-        <p className="mb-4 text-2xl text-slate-700">18 de Abril de 2026</p>
-        <div className="mb-6">
-          <span className="text-xl font-medium">Contagem decrescente:</span>
-          <div className="mt-2 text-2xl font-bold text-pink-600">
-            {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m {timeLeft.seconds}s
-          </div>
-        </div>
-      </div>
-
-      {/* Our Story Section */}
-      <section className="mb-12 w-full max-w-2xl">
-        <h2 className="mb-4 text-3xl font-bold">Nossa História</h2>
-        <p className="mb-2">
-          Como nos conhecemos:{' '}
-          <span className="text-slate-700">[Conte aqui como se conheceram]</span>
-        </p>
-        <p className="mb-2">
-          Pedido de casamento: <span className="text-slate-700">[Conte o pedido]</span>
-        </p>
-        <div className="mb-4">
-          <h3 className="mb-2 text-xl font-semibold">Linha do tempo</h3>
-          <ul className="list-inside list-disc text-slate-700">
-            <li>Primeiro encontro</li>
-            <li>Primeira viagem</li>
-            <li>Outros marcos divertidos</li>
-          </ul>
-        </div>
-        <div className="flex justify-center gap-4">
-          {/* Adicione fotos pessoais aqui */}
-          <Image src="/MeS-1.jpeg" alt="Foto 1" width={120} height={80} className="rounded" />
-          {/* <Image src="/MeS-2.JPG" alt="Foto 2" width={120} height={80} className="rounded" /> */}
-        </div>
-      </section>
 
       {/* The Wedding Section */}
-      <section className="mb-12 w-full max-w-2xl">
-        <h2 className="mb-4 text-3xl font-bold">O Casamento</h2>
-        <p>
-          <strong>Quando & Onde:</strong> 18 de Abril de 2026 15:00h, Igreja de São Quintino, Lisboa
+      <section className="mb-12 w-full max-w-5xl">
+        <h1 className="mb-8 text-5xl font-bold text-center">Maria e Sebastião</h1>
+        <h2 className="mb-4 text-3xl font-bold text-center">18 de Abril 2026</h2>
+
+
+        {/* Texto Introdutório */}
+        <p className="mb-8 text-center text-slate-700">
+          Olá a todos!
+          Este é o nosso  oficial do casamento — a central de operações onde encontram tudo o que precisam para o grande dia.
+          Prometemos que não há testes surpresa nem dress code secreto (só muita festa, gargalhadas e talvez uns passos de dança duvidosos).
         </p>
-        <div className="my-2">
-          <iframe
-            width="700"
-            height="300"
-            id="gmap_canvas"
-            src="https://maps.google.com/maps?width=700&amp;height=300&amp;hl=en&amp;q=Igreja%20S%C3%A3o%20Quintino%20+(Igreja%20de%20S%C3%A3o%20Quintino)&amp;t=p&amp;z=11&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-            title="Mapa Igreja de São Quintino"
-            style={{ border: 0, width: '100%', maxWidth: 700, height: 300 }}
-            allowFullScreen
-            loading="lazy"
-          ></iframe>
+
+        {/* Our Story Section */}
+        <section className="mb-12 w-full max-w-3xl mx-auto">
+          <h2 className="mb-6 text-3xl font-bold text-center">A Nossa História</h2>
+          <div className="relative flex flex-col md:flex-row justify-between items-center gap-8">
+            {/* Conhecemos */}
+            <div className="flex flex-col items-center text-center flex-1 relative">
+              <div className="w-24 h-24 mb-2 relative rounded-full overflow-hidden bg-white shadow-md border-2 border-[#F6E7C1]">
+                <Image
+                  src="/meet.png"
+                  alt="Quando nos conhecemos"
+                  fill
+                  className="object-cover"
+                  sizes="96px"
+                  priority
+                  style={{ objectFit: 'cover', objectPosition: 'center', scale: '1' }}
+                />
+              </div>
+              <div className="text-xl font-semibold mb-1">Conhecemo-nos em...</div>
+              <div className="text-lg text-slate-700">Julho 2022</div>
+            </div>
+            {/* Namoro */}
+            <div className="flex flex-col items-center text-center flex-1 relative">
+              <div className="w-24 h-24 mb-2 relative rounded-full overflow-hidden bg-white shadow-md border-2 border-[#F6E7C1]">
+                <Image
+                  src="/date.jpeg"
+                  alt="Começamos a namorar"
+                  fill
+                  className="object-cover"
+                  sizes="96px"
+                  priority
+                  style={{ objectFit: 'cover', objectPosition: 'bottom', scale: '2' }}
+                />
+              </div>
+              <div className="text-xl font-semibold mb-1">Começamos a namorar em...</div>
+              <div className="text-lg text-slate-700">Agosto 2022</div>
+            </div>
+            {/* Pedido */}
+            <div className="flex flex-col items-center text-center flex-1">
+              <div className="w-24 h-24 mb-2 relative rounded-full overflow-hidden bg-white shadow-md">
+                <Image
+                  src="/propose.jpeg"
+                  alt="Pedido de casamento"
+                  fill
+                  className="object-cover"
+                  sizes="96px"
+                  priority
+                  style={{ objectFit: 'cover', objectPosition: 'right', scale: '1.2' }}
+                />
+              </div>
+              <div className="text-xl font-semibold mb-1">O SIM em...</div>
+              <div className="text-lg text-slate-700">Junho 2025</div>
+            </div>
+          </div>
+        </section>
+
+        <div className="flex flex-col md:flex-row gap-8">
+          {/* Ceremony Card */}
+          <div className="flex-1 flex flex-col bg-white rounded-xl shadow-lg border border-neutral-200 overflow-hidden">
+            <div className="w-full h-56 md:h-64 relative">
+              <Image
+                src="/igreja.jpg"
+                alt="Igreja de São Quintino"
+                fill
+                className="object-cover w-full h-full"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
+              />
+            </div>
+            <div className="w-full flex flex-col justify-center p-6 gap-2">
+              <h3 className="text-2xl font-bold mb-1">Cerimónia</h3>
+              <div className="text-lg mb-1">18 de Abril de 2026, 15:00h</div>
+              <div className="text-lg font-semibold mb-2">Igreja de São Quintino</div>
+              <a
+                href="https://maps.app.goo.gl/NdTXTuaLWozQAL5NA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-2 px-4 py-2 rounded-lg bg-teal-400 text-white font-bold shadow hover:bg-teal-500 transition-colors text-base"
+              >
+                Ver no Google Maps
+              </a>
+            </div>
+          </div>
+          {/* Reception Card */}
+          <div className="flex-1 flex flex-col bg-white rounded-xl shadow-lg border border-neutral-200 overflow-hidden">
+            <div className="w-full h-56 md:h-64 relative">
+              <Image
+                src="/quinta.jpg"
+                alt="Quinta Nova do Hespanhol"
+                fill
+                className="object-cover w-full h-full"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
+              />
+            </div>
+            <div className="w-full flex flex-col justify-center p-6 gap-2">
+              <h3 className="text-2xl font-bold mb-1">Recepção</h3>
+              <div className="text-lg mb-1">18 de Abril de 2026, 17:00h</div>
+              <div className="text-lg font-semibold mb-2">Quinta Nova do Hespanhol</div>
+              <a
+                href="https://maps.app.goo.gl/NF5n9PTDRVYd7aN29"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-2 px-4 py-2 rounded-lg bg-teal-400 text-white font-bold shadow hover:bg-teal-500 transition-colors text-base"
+              >
+                Ver no Google Maps
+              </a>
+            </div>
+          </div>
         </div>
-        <p>
-          <strong>Recepção:</strong> Quinta do Hespanhol, 18:00
-        </p>
-        <div className="my-2">
-          <iframe
-            width="700"
-            height="300"
-            id="gmap_canvas"
-            src="https://maps.google.com/maps?width=700&amp;height=300&amp;hl=en&amp;q=Quinta%20Nova,%20Carreiras%202565-136%20Carvoeira%20(Torres%20Vedras)%20%20+(Quinta%20Nova%20de%20Hespanhol)&amp;t=p&amp;z=11&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-            title="Mapa Quinta Nova de Hespanhol"
-            style={{ border: 0, width: '100%', maxWidth: 700, height: 300 }}
-            allowFullScreen
-            loading="lazy"
-          ></iframe>
-        </div>
-        <p>
-          <strong>Dress code:</strong> Formal
-        </p>
-        <p>
-          <strong>Nota sobre o tempo:</strong> Primavera, pode estar ameno.
-        </p>
-        <p>
-          <strong>Estacionamento:</strong> Disponível na quinta. Transporte: Uber, táxi, comboio.
-        </p>
       </section>
 
-      {/* Schedule Section */}
+      {/* Timeline */}
       <section className="mb-12 w-full max-w-2xl">
-        <h2 className="mb-4 text-3xl font-bold">Programa</h2>
+        <h2 className="mb-4 text-3xl font-bold italic">Timeline</h2>
         <ul className="list-inside list-disc text-slate-700">
-          <li>Cerimónia: 15:00</li>
-          <li>Cocktail: 16:00</li>
-          <li>Jantar: 18:00</li>
-          <li>Festa e dança: 20:00</li>
-          <li>Brunch (opcional): 12:00 no dia seguinte</li>
+          <li>15:00 - Cerimónia na Igreja de São Quintino</li>
+          <li>16:30 - Cocktail na Quinta Nova do Hespanhol</li>
+          <li>18:00 - Jantar e Festas</li>
+          <li>22:00 - Corte do Bolo e Brinde</li>
+          <li>23:00 - Festa Continua!</li>
         </ul>
+      </section>
+
+      {/* Where to stay */}
+      <section className="mb-12 w-full max-w-2xl">
+        <h2 className="mb-4 text-3xl font-bold">Onde Ficar</h2>
+        <p className="text-slate-700">
+          Recomendamos os seguintes hotéis próximos:
+        </p>
+        <ul className="list-inside list-disc text-slate-700">
+          <li>Hotel Central - Código: CASAMENTO2026</li>
+          <li>Hotel Lisboa</li>
+          <li>Airbnb na área de Lisboa</li>
+        </ul>
+      </section>
+
+      {/* Attaire */}
+      <section className="mb-12 w-full max-w-2xl">
+        <h2 className="mb-4 text-3xl font-bold">Traje</h2>
+        <p className="text-slate-700">
+          O traje para o casamento é formal. Sugerimos:
+        </p>
+        <ul className="list-inside list-disc text-slate-700">
+          <li>Homens: Fato escuro, camisa, gravata e sapatos formais.</li>
+          <li>Mulheres: Vestido de cocktail ou vestido longo.</li>
+        </ul>
+      </section>
+
+      {/* FAQs */}
+      <section className="mb-12 w-full max-w-2xl">
+        <h2 className="mb-4 text-3xl font-bold">Perguntas Frequentes</h2>
+        <div className="mb-4">
+          <h3 className="text-xl font-semibold">Há estacionamento disponível?</h3>
+          <p className="text-slate-700">
+            Sim, há estacionamento gratuito na Quinta Nova do Hespanhol.
+          </p>
+        </div>
+        <div className="mb-4">
+          <h3 className="text-xl font-semibold">O que fazer em caso de alergias alimentares?</h3>
+          <p className="text-slate-700">
+            Por favor, indique quaisquer restrições alimentares no formulário de RSVP.
+          </p>
+        </div>
+        <div className="mb-4">
+          <h3 className="text-xl font-semibold">Há transporte entre a igreja e a quinta?</h3>
+          <p className="text-slate-700">
+            Sim, haverá transporte disponível para os convidados entre a igreja e a quinta.
+          </p>
+        </div>
       </section>
 
       {/* RSVP Section */}
@@ -149,20 +213,6 @@ export default function Home() {
             Enviar
           </button>
         </form>
-      </section>
-
-      {/* Travel & Stay Section */}
-      <section className="mb-12 w-full max-w-2xl">
-        <h2 className="mb-4 text-3xl font-bold">Viagem & Estadia</h2>
-        <p>
-          <strong>Hotéis recomendados:</strong> Hotel Central (código: CASAMENTO2026), Hotel Lisboa
-        </p>
-        <p>
-          <strong>Transportes:</strong> Aeroporto de Lisboa, comboio, táxi, Uber.
-        </p>
-        <p>
-          <strong>Dicas locais:</strong> Pastéis de nata, miradouros, museus.
-        </p>
       </section>
 
       {/* Registry / Gifts Section */}
@@ -188,16 +238,6 @@ export default function Home() {
       {/* Gallery Section (optional) */}
       <section className="mb-12 w-full max-w-2xl">
         <h2 className="mb-4 text-3xl font-bold">Galeria</h2>
-        <div className="flex flex-wrap justify-center gap-4">
-          {/* Adicione fotos de noivado, infância, casal, etc. */}
-          <Image
-            src="/MeS-1.jpeg"
-            alt="Foto de noivado"
-            width={120}
-            height={80}
-            className="rounded"
-          />
-        </div>
         <p className="mt-4">Após o casamento, partilhe as suas fotos connosco!</p>
       </section>
     </main>
