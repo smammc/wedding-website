@@ -194,7 +194,7 @@ export default function Home() {
       </section>
 
       {/* RSVP Section */}
-      <section className="mb-12 w-full max-w-2xl">
+{/*      <section className="mb-12 w-full max-w-2xl">
         <h2 className="mb-4 text-3xl font-bold">Confirmação de Presença (RSVP)</h2>
         <form className="flex flex-col gap-4">
           <input type="text" placeholder="Nome(s)" className="rounded border p-2" required />
@@ -204,15 +204,22 @@ export default function Home() {
             <option value="no">Não</option>
           </select>
           <input type="text" placeholder="Restrições alimentares" className="rounded border p-2" />
-          <input
-            type="text"
-            placeholder="Pedido de música (opcional)"
-            className="rounded border p-2"
-          />
           <button type="submit" className="rounded bg-pink-600 p-2 font-bold text-white">
             Enviar
           </button>
         </form>
+      </section>*/}
+
+      <section className="mb-12 w-full max-w-2xl">
+        <h2 className="mb-4 text-3xl font-bold">Confirmação de Presença (RSVP)</h2>
+        <iframe
+          src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAYAAMcdKolUMTJFQjNOV0tGWk5KRlE2TkQ5NTRYSkxPRS4u"
+          width="100%"
+          height="600"
+          style={{ border: 'none' }}
+          allowFullScreen
+          title="RSVP Form"
+        />
       </section>
 
       {/* Registry / Gifts Section */}
