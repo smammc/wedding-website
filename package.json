@@ -11,6 +11,8 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@azure/msal-browser": "^4.25.0",
+    "@microsoft/microsoft-graph-client": "^3.0.7",
     "next": "15.5.3",
     "react": "19.1.0",
     "react-dom": "19.1.0"

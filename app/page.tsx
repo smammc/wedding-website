@@ -76,86 +76,120 @@ export default function Home() {
             </div>
           </div>
         </section>
+      </section>
 
+      <h2 className="mb-6 text-3xl font-bold text-center">Cerimónia e Recepção</h2>
+        <section className="mb-12 w-full max-w-2xl flex justify-center">
+          <div className="flex flex-col md:flex-row gap-8 justify-center items-center w-full">
+            {/* Ceremony Card */}
+            <div className="flex-1 flex flex-col bg-white rounded-xl shadow-lg border border-neutral-200 overflow-hidden max-w-xs">
+              <div className="w-full h-32 md:h-40 relative">
+                <Image
+                  src="/igreja.jpg"
+                  alt="Igreja de São Quintino"
+                  fill
+                  className="object-cover w-full h-full"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
+              </div>
+              <div className="w-full flex flex-col justify-center p-4 gap-2">
+                <h3 className="text-xl font-bold mb-1">Cerimónia</h3>
+                <div className="text-base mb-1">18 de Abril de 2026, 14:30h</div>
+                <div className="text-base font-semibold mb-2">Igreja de São Quintino</div>
+                <a
+                  href="https://maps.app.goo.gl/NdTXTuaLWozQAL5NA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-2 px-3 py-1.5 rounded-lg bg-teal-400 text-white font-bold shadow hover:bg-teal-500 transition-colors text-sm"
+                >
+                  Ver no Google Maps
+                </a>
+              </div>
+            </div>
+            {/* Reception Card */}
+            <div className="flex-1 flex flex-col bg-white rounded-xl shadow-lg border border-neutral-200 overflow-hidden max-w-xs">
+              <div className="w-full h-32 md:h-40 relative">
+                <Image
+                  src="/quinta.jpg"
+                  alt="Quinta Nova do Hespanhol"
+                  fill
+                  className="object-cover w-full h-full"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
+              </div>
+              <div className="w-full flex flex-col justify-center p-4 gap-2">
+                <h3 className="text-xl font-bold mb-1">Recepção</h3>
+                <div className="text-base mb-1">18 de Abril de 2026</div>
+                <div className="text-base font-semibold mb-2">Quinta Nova do Hespanhol</div>
+                <a
+                  href="https://maps.app.goo.gl/NF5n9PTDRVYd7aN29"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-2 px-3 py-1.5 rounded-lg bg-teal-400 text-white font-bold shadow hover:bg-teal-500 transition-colors text-sm"
+                >
+                  Ver no Google Maps
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      {/* Where to stay */}
+      <section className="mb-12 w-full max-w-2xl">
+        <h2 className="mb-6 text-3xl font-bold text-center">Onde ficar</h2>
         <div className="flex flex-col md:flex-row gap-8">
-          {/* Ceremony Card */}
+          {/* Hotel Card 1 */}
           <div className="flex-1 flex flex-col bg-white rounded-xl shadow-lg border border-neutral-200 overflow-hidden">
-            <div className="w-full h-56 md:h-64 relative">
+            <div className="w-full h-32 md:h-40 relative">
               <Image
-                src="/igreja.jpg"
-                alt="Igreja de São Quintino"
+                src="/hotelCampoReal.jpg"
+                alt="Hotel Campo Real"
                 fill
                 className="object-cover w-full h-full"
                 sizes="(max-width: 768px) 100vw, 50vw"
                 priority
               />
             </div>
-            <div className="w-full flex flex-col justify-center p-6 gap-2">
-              <h3 className="text-2xl font-bold mb-1">Cerimónia</h3>
-              <div className="text-lg mb-1">18 de Abril de 2026, 15:00h</div>
-              <div className="text-lg font-semibold mb-2">Igreja de São Quintino</div>
+            <div className="w-full flex flex-col justify-center p-4 gap-2">
+              <h3 className="text-xl font-bold mb-1">Hotel Dolce CampoReal</h3>
+              {/*<div className="text-base mb-1">Código: CASAMENTO2026</div>*/}
               <a
-                href="https://maps.app.goo.gl/NdTXTuaLWozQAL5NA"
+                href="https://www.booking.com/hotel/pt/dolce-camporeal-lisbon.pt-pt.html?chal_t=1760290295313&force_referer=https%3A%2F%2Fwww.google.com%2F"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block mt-2 px-4 py-2 rounded-lg bg-teal-400 text-white font-bold shadow hover:bg-teal-500 transition-colors text-base"
+                className="inline-block mt-2 px-3 py-1.5 rounded-lg bg-teal-400 text-white font-bold shadow hover:bg-teal-500 transition-colors text-sm"
               >
-                Ver no Google Maps
+                Reservar no Booking.com
               </a>
             </div>
           </div>
-          {/* Reception Card */}
+          {/* Hotel Card 2 */}
           <div className="flex-1 flex flex-col bg-white rounded-xl shadow-lg border border-neutral-200 overflow-hidden">
-            <div className="w-full h-56 md:h-64 relative">
+            <div className="w-full h-32 md:h-40 relative">
               <Image
-                src="/quinta.jpg"
-                alt="Quinta Nova do Hespanhol"
+                src="/2.jpeg"
+                alt="Hotel Lisboa"
                 fill
                 className="object-cover w-full h-full"
                 sizes="(max-width: 768px) 100vw, 50vw"
                 priority
               />
             </div>
-            <div className="w-full flex flex-col justify-center p-6 gap-2">
-              <h3 className="text-2xl font-bold mb-1">Recepção</h3>
-              <div className="text-lg mb-1">18 de Abril de 2026, 17:00h</div>
-              <div className="text-lg font-semibold mb-2">Quinta Nova do Hespanhol</div>
+            <div className="w-full flex flex-col justify-center p-4 gap-2">
+              <h3 className="text-xl font-bold mb-1">Hotel Lisboa</h3>
               <a
-                href="https://maps.app.goo.gl/NF5n9PTDRVYd7aN29"
+                href="https://www.booking.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block mt-2 px-4 py-2 rounded-lg bg-teal-400 text-white font-bold shadow hover:bg-teal-500 transition-colors text-base"
+                className="inline-block mt-2 px-3 py-1.5 rounded-lg bg-teal-400 text-white font-bold shadow hover:bg-teal-500 transition-colors text-sm"
               >
-                Ver no Google Maps
+                Reservar no Booking.com
               </a>
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Timeline */}
-      <section className="mb-12 w-full max-w-2xl">
-        <h2 className="mb-4 text-3xl font-bold italic">Timeline</h2>
-        <ul className="list-inside list-disc text-slate-700">
-          <li>15:00 - Cerimónia na Igreja de São Quintino</li>
-          <li>16:30 - Cocktail na Quinta Nova do Hespanhol</li>
-          <li>18:00 - Jantar e Festas</li>
-          <li>22:00 - Corte do Bolo e Brinde</li>
-          <li>23:00 - Festa Continua!</li>
-        </ul>
-      </section>
-
-      {/* Where to stay */}
-      <section className="mb-12 w-full max-w-2xl">
-        <h2 className="mb-4 text-3xl font-bold">Onde Ficar</h2>
-        <p className="text-slate-700">
-          Recomendamos os seguintes hotéis próximos:
-        </p>
-        <ul className="list-inside list-disc text-slate-700">
-          <li>Hotel Central - Código: CASAMENTO2026</li>
-          <li>Hotel Lisboa</li>
-          <li>Airbnb na área de Lisboa</li>
-        </ul>
       </section>
 
       {/* Attaire */}
@@ -185,12 +219,6 @@ export default function Home() {
             Por favor, indique quaisquer restrições alimentares no formulário de RSVP.
           </p>
         </div>
-        <div className="mb-4">
-          <h3 className="text-xl font-semibold">Há transporte entre a igreja e a quinta?</h3>
-          <p className="text-slate-700">
-            Sim, haverá transporte disponível para os convidados entre a igreja e a quinta.
-          </p>
-        </div>
       </section>
 
       {/* RSVP Section */}
@@ -210,7 +238,7 @@ export default function Home() {
         </form>
       </section>*/}
 
-      <section className="mb-12 w-full max-w-2xl">
+{/*      <section className="mb-12 w-full max-w-2xl">
         <h2 className="mb-4 text-3xl font-bold">Confirmação de Presença (RSVP)</h2>
         <iframe
           src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAYAAMcdKolUMTJFQjNOV0tGWk5KRlE2TkQ5NTRYSkxPRS4u"
@@ -220,7 +248,7 @@ export default function Home() {
           allowFullScreen
           title="RSVP Form"
         />
-      </section>
+      </section>*/}
 
       {/* Registry / Gifts Section */}
       <section className="mb-12 w-full max-w-2xl">
