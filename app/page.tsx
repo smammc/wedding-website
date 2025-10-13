@@ -4,8 +4,31 @@ import Slideshow from './Slideshow'
 
 export default function Home() {
   return (
+    <div className="relative min-h-screen overflow-hidden">
+      {/* Background side images */}
+      <div className="fixed top-0 left-0 w-1/10 md:w-1/6 lg:w-1/5 h-full">
+        <Image
+          src="/doodle.jpg"
+          alt="Left Background"
+          fill
+          className="object-cover"
+          priority
+          style={{ objectPosition: "center" }} // flips horizontally for "mirror"
+        />
+      </div>
+
+      <div className="fixed top-0 right-0 w-1/10 md:w-1/6 lg:w-1/5 h-full">
+        <Image
+          src="/doodle.jpg"
+          alt="Right Background"
+          fill
+          className="object-cover"
+          priority
+          style={{ objectPosition: "center" }}
+        />
+      </div>
     <main className="flex min-h-screen flex-col items-center justify-center p-8">
-      <div className="mb-8 w-full max-w-5xl">
+      <div className="mb-8 w-full max-w-5xl flex justify-center">
         <Slideshow />
       </div>
 
@@ -16,16 +39,18 @@ export default function Home() {
 
 
         {/* Texto Introdutório */}
+        <div className={"flex flex-col items-center justify-center w-full max-w-3xl mx-auto mt-10 mb-10 px-4 md:w-3/4 md:px-8 "}>
         <p className="mb-8 text-center text-slate-700">
           Olá a todos!
           Este é o nosso  oficial do casamento — a central de operações onde encontram tudo o que precisam para o grande dia.
           Prometemos que não há testes surpresa nem dress code secreto (só muita festa, gargalhadas e talvez uns passos de dança duvidosos).
         </p>
+        </div>
 
         {/* Our Story Section */}
         <section className="mb-12 w-full max-w-3xl mx-auto">
           <h2 className="mb-6 text-3xl font-bold text-center">A Nossa História</h2>
-          <div className="relative flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="relative flex flex-col lg:flex-row justify-between items-center gap-8">
             {/* Conhecemos */}
             <div className="flex flex-col items-center text-center flex-1 relative">
               <div className="w-24 h-24 mb-2 relative rounded-full overflow-hidden bg-white shadow-md border-2 border-[#F6E7C1]">
@@ -80,9 +105,9 @@ export default function Home() {
 
       <h2 className="mb-6 text-3xl font-bold text-center">Cerimónia e Recepção</h2>
         <section className="mb-12 w-full max-w-2xl flex justify-center">
-          <div className="flex flex-col md:flex-row gap-8 justify-center items-center w-full">
+          <div className="flex flex-col lg:flex-row gap-8 justify-center items-center w-full">
             {/* Ceremony Card */}
-            <div className="flex-1 flex flex-col bg-white rounded-xl shadow-lg border border-neutral-200 overflow-hidden max-w-xs">
+            <div className="flex-1 flex flex-col bg-white rounded-xl shadow-lg border border-neutral-200 overflow-hidden w-[220px] md:w-[400px]">
               <div className="w-full h-32 md:h-40 relative">
                 <Image
                   src="/igreja.jpg"
@@ -108,7 +133,7 @@ export default function Home() {
               </div>
             </div>
             {/* Reception Card */}
-            <div className="flex-1 flex flex-col bg-white rounded-xl shadow-lg border border-neutral-200 overflow-hidden max-w-xs">
+            <div className="flex-1 flex flex-col bg-white rounded-xl shadow-lg border border-neutral-200 overflow-hidden w-[220px] md:w-[400px]">
               <div className="w-full h-32 md:h-40 relative">
                 <Image
                   src="/quinta.jpg"
@@ -136,65 +161,68 @@ export default function Home() {
           </div>
         </section>
 
-      {/* Where to stay */}
-      <section className="mb-12 w-full max-w-2xl">
-        <h2 className="mb-6 text-3xl font-bold text-center">Onde ficar</h2>
-        <div className="flex flex-col md:flex-row gap-8">
-          {/* Hotel Card 1 */}
-          <div className="flex-1 flex flex-col bg-white rounded-xl shadow-lg border border-neutral-200 overflow-hidden">
-            <div className="w-full h-32 md:h-40 relative">
-              <Image
-                src="/hotelCampoReal.jpg"
-                alt="Hotel Campo Real"
-                fill
-                className="object-cover w-full h-full"
-                sizes="(max-width: 768px) 100vw, 50vw"
-                priority
-              />
+      <h2 className="mb-6 text-3xl font-bold text-center">Onde ficar</h2>
+        <section className="mb-12 w-full max-w-2xl flex justify-center">
+          <div className="flex flex-col lg:flex-row gap-8 justify-center items-center w-full">
+            {/* Hotel 1 */}
+            <div className="flex-1 flex flex-col bg-white rounded-xl shadow-lg border border-neutral-200 overflow-hidden w-[220px] md:w-[400px]">
+              <div className="w-full h-32 md:h-40 relative">
+                <Image
+                  src="/hotelCampoReal.jpg"
+                  alt="Hotel Dolce CampoReal"
+                  fill
+                  className="object-cover w-full h-full"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
+              </div>
+              <div className="w-full flex flex-col justify-center p-4 gap-2">
+                <h3 className="text-xl font-bold mb-1">Hotel Dolce CampoReal</h3>
+                {/*<div className="text-base mb-1">18 de Abril de 2026, 14:30h</div>
+                <div className="text-base font-semibold mb-2">Igreja de São Quintino</div>*/}
+                <a
+                  href="https://www.booking.com/hotel/pt/dolce-camporeal-lisbon.pt-pt.html?chal_t=1760290295313&force_referer=https%3A%2F%2Fwww.google.com%2F"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-2 px-3 py-1.5 rounded-lg bg-teal-400 text-white font-bold shadow hover:bg-teal-500 transition-colors text-sm"
+                >
+                  Ver no Booking.com
+                </a>
+              </div>
             </div>
-            <div className="w-full flex flex-col justify-center p-4 gap-2">
-              <h3 className="text-xl font-bold mb-1">Hotel Dolce CampoReal</h3>
-              {/*<div className="text-base mb-1">Código: CASAMENTO2026</div>*/}
-              <a
-                href="https://www.booking.com/hotel/pt/dolce-camporeal-lisbon.pt-pt.html?chal_t=1760290295313&force_referer=https%3A%2F%2Fwww.google.com%2F"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block mt-2 px-3 py-1.5 rounded-lg bg-teal-400 text-white font-bold shadow hover:bg-teal-500 transition-colors text-sm"
-              >
-                Reservar no Booking.com
-              </a>
+            {/* Hotel 2 */}
+            <div className="flex-1 flex flex-col bg-white rounded-xl shadow-lg border border-neutral-200 overflow-hidden w-[220px] md:w-[400px]">
+              <div className="w-full h-32 md:h-40 relative">
+                <Image
+                  src="/hotelCampoReal.jpg"
+                  alt="Quinta Nova do Hespanhol"
+                  fill
+                  className="object-cover w-full h-full"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
+              </div>
+              <div className="w-full flex flex-col justify-center p-4 gap-2">
+                <h3 className="text-xl font-bold mb-1">Hotel 2</h3>
+                {/*<div className="text-base mb-1">18 de Abril de 2026</div>
+                <div className="text-base font-semibold mb-2">Quinta Nova do Hespanhol</div>*/}
+                <a
+                  href="https://maps.app.goo.gl/NF5n9PTDRVYd7aN29"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-2 px-3 py-1.5 rounded-lg bg-teal-400 text-white font-bold shadow hover:bg-teal-500 transition-colors text-sm"
+                >
+                  Ver no Booking.com
+                </a>
+              </div>
             </div>
           </div>
-          {/* Hotel Card 2 */}
-          <div className="flex-1 flex flex-col bg-white rounded-xl shadow-lg border border-neutral-200 overflow-hidden">
-            <div className="w-full h-32 md:h-40 relative">
-              <Image
-                src="/2.jpeg"
-                alt="Hotel Lisboa"
-                fill
-                className="object-cover w-full h-full"
-                sizes="(max-width: 768px) 100vw, 50vw"
-                priority
-              />
-            </div>
-            <div className="w-full flex flex-col justify-center p-4 gap-2">
-              <h3 className="text-xl font-bold mb-1">Hotel Lisboa</h3>
-              <a
-                href="https://www.booking.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block mt-2 px-3 py-1.5 rounded-lg bg-teal-400 text-white font-bold shadow hover:bg-teal-500 transition-colors text-sm"
-              >
-                Reservar no Booking.com
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
       {/* Attaire */}
-      <section className="mb-12 w-full max-w-2xl">
-        <h2 className="mb-4 text-3xl font-bold">Traje</h2>
+      <section className="mb-12 w-full max-w-2xl flex justify-center flex-col items-center">
+        <h2 className="mb-4 text-3xl font-bold">Dresscode</h2>
+        <div className={"flex flex-col items-center justify-center w-full max-w-3xl mx-auto mt-10 mb-10 px-4 md:w-3/4 md:px-8 "}>
         <p className="text-slate-700">
           O traje para o casamento é formal. Sugerimos:
         </p>
@@ -202,11 +230,13 @@ export default function Home() {
           <li>Homens: Fato escuro, camisa, gravata e sapatos formais.</li>
           <li>Mulheres: Vestido de cocktail ou vestido longo.</li>
         </ul>
+        </div>
       </section>
 
       {/* FAQs */}
-      <section className="mb-12 w-full max-w-2xl">
+      <section className="mb-12 w-full max-w-2xl flex justify-center flex-col items-center">
         <h2 className="mb-4 text-3xl font-bold">Perguntas Frequentes</h2>
+        <div className={"flex flex-col items-center justify-center w-full max-w-3xl mx-auto mt-10 mb-10 px-4 md:w-3/4 md:px-8 "}>
         <div className="mb-4">
           <h3 className="text-xl font-semibold">Há estacionamento disponível?</h3>
           <p className="text-slate-700">
@@ -218,6 +248,7 @@ export default function Home() {
           <p className="text-slate-700">
             Por favor, indique quaisquer restrições alimentares no formulário de RSVP.
           </p>
+        </div>
         </div>
       </section>
 
@@ -251,7 +282,7 @@ export default function Home() {
       </section>*/}
 
       {/* Registry / Gifts Section */}
-      <section className="mb-12 w-full max-w-2xl">
+      <section className="mb-12 w-full max-w-2xl  flex justify-center flex-col items-center">
         <h2 className="mb-4 text-3xl font-bold">Presentes</h2>
         <p>
           <strong>Lista de presentes:</strong>{' '}
@@ -271,10 +302,11 @@ export default function Home() {
       </section>
 
       {/* Gallery Section (optional) */}
-      <section className="mb-12 w-full max-w-2xl">
+      <section className="mb-12 w-full max-w-2xl flex justify-center flex-col items-center">
         <h2 className="mb-4 text-3xl font-bold">Galeria</h2>
         <p className="mt-4">Após o casamento, partilhe as suas fotos connosco!</p>
       </section>
     </main>
+    </div>
   )
 }
