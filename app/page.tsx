@@ -8,23 +8,23 @@ export default function Home() {
       {/* Background side images */}
       <div className="fixed top-0 left-0 w-1/10 md:w-1/6 lg:w-1/5 h-full">
         <Image
-          src="/doodle.jpg"
+          src="/IMG_1908-Photoroom.png"
           alt="Left Background"
           fill
           className="object-cover"
           priority
-          style={{ objectPosition: "center" }} // flips horizontally for "mirror"
+          style={{ objectPosition: "left",  }}
         />
       </div>
 
       <div className="fixed top-0 right-0 w-1/10 md:w-1/6 lg:w-1/5 h-full">
         <Image
-          src="/doodle.jpg"
+          src="/IMG_1908-Photoroom.png"
           alt="Right Background"
           fill
           className="object-cover"
           priority
-          style={{ objectPosition: "center" }}
+          style={{ objectPosition: "right",  }}
         />
       </div>
     <main className="flex min-h-screen flex-col items-center justify-center p-8">
@@ -126,7 +126,7 @@ export default function Home() {
                   href="https://maps.app.goo.gl/NdTXTuaLWozQAL5NA"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block mt-2 px-3 py-1.5 rounded-lg bg-teal-400 text-white font-bold shadow hover:bg-teal-500 transition-colors text-sm"
+                  className="inline-block mt-2 px-3 py-1.5 rounded-lg bg-orange-300 text-white font-bold shadow hover:bg-orange-500 transition-colors text-sm"
                 >
                   Ver no Google Maps
                 </a>
@@ -152,7 +152,7 @@ export default function Home() {
                   href="https://maps.app.goo.gl/NF5n9PTDRVYd7aN29"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block mt-2 px-3 py-1.5 rounded-lg bg-teal-400 text-white font-bold shadow hover:bg-teal-500 transition-colors text-sm"
+                  className="inline-block mt-2 px-3 py-1.5 rounded-lg bg-orange-300 text-white font-bold shadow hover:bg-orange-500 transition-colors text-sm"
                 >
                   Ver no Google Maps
                 </a>
@@ -184,7 +184,7 @@ export default function Home() {
                   href="https://www.booking.com/hotel/pt/dolce-camporeal-lisbon.pt-pt.html?chal_t=1760290295313&force_referer=https%3A%2F%2Fwww.google.com%2F"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block mt-2 px-3 py-1.5 rounded-lg bg-teal-400 text-white font-bold shadow hover:bg-teal-500 transition-colors text-sm"
+                  className="inline-block mt-2 px-3 py-1.5 rounded-lg bg-orange-300 text-white font-bold shadow hover:bg-orange-500 transition-colors text-sm"
                 >
                   Ver no Booking.com
                 </a>
@@ -210,7 +210,7 @@ export default function Home() {
                   href="https://maps.app.goo.gl/NF5n9PTDRVYd7aN29"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block mt-2 px-3 py-1.5 rounded-lg bg-teal-400 text-white font-bold shadow hover:bg-teal-500 transition-colors text-sm"
+                  className="inline-block mt-2 px-3 py-1.5 rounded-lg bg-orange-300 text-white font-bold shadow hover:bg-orange-500 transition-colors text-sm"
                 >
                   Ver no Booking.com
                 </a>
