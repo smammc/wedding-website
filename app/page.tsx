@@ -1,8 +1,46 @@
 'use client'
 import Image from 'next/image'
 import Slideshow from './Slideshow'
+import { useState } from 'react'
 
 export default function Home() {
+
+  const [formStatus, setFormStatus] = useState< 'idle' | 'submitting' | 'success' | 'error'>('idle');
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setFormStatus('submitting');
+
+    const form = event.currentTarget;
+    const data = new FormData(form);
+
+    const payload = {
+      name: data.get('name'),
+      attending: data.get('attending'),
+      dietary: data.get('dietary'),
+    }
+
+    try {
+      const response = await fetch('/api/rsvp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error('Erro ao enviar resposta');
+      }
+
+      setFormStatus('success');
+      form.reset();
+    } catch (error) {
+      console.error(error);
+      setFormStatus('error');
+    }
+  }
+
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* Background side images */}
@@ -253,21 +291,25 @@ export default function Home() {
       </section>
 
       {/* RSVP Section */}
-{/*      <section className="mb-12 w-full max-w-2xl">
+      <section className="mb-12 w-full max-w-2xl flex justify-center flex-col items-center">
         <h2 className="mb-4 text-3xl font-bold">Confirmação de Presença (RSVP)</h2>
-        <form className="flex flex-col gap-4">
-          <input type="text" placeholder="Nome(s)" className="rounded border p-2" required />
-          <select className="rounded border p-2" required>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-1/2">
+          <input name={"name"} type="text" placeholder="Nome" className="rounded border p-2" required />
+          <select name={"attending"} className="rounded border p-2" required>
             <option value="">Vai comparecer?</option>
             <option value="yes">Sim</option>
             <option value="no">Não</option>
           </select>
-          <input type="text" placeholder="Restrições alimentares" className="rounded border p-2" />
-          <button type="submit" className="rounded bg-pink-600 p-2 font-bold text-white">
+          <input name={"dietary"} type="text" placeholder="Restrições alimentares" className="rounded border p-2" />
+          <button type="submit" className="rounded bg-orange-600 p-2 font-bold text-white">
             Enviar
           </button>
         </form>
-      </section>*/}
+
+        {formStatus === 'submitting' && <p className="mt-4 text-blue-600">A enviar...</p>}
+        {formStatus === 'success' && <p className="mt-4 text-green-600">Obrigado pela confirmação!</p>}
+        {formStatus === 'error' && <p className="mt-4 text-red-600">Ocorreu um erro. Por favor, tente novamente.</p>}
+      </section>
 
 {/*      <section className="mb-12 w-full max-w-2xl">
         <h2 className="mb-4 text-3xl font-bold">Confirmação de Presença (RSVP)</h2>
