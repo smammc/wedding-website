@@ -44,7 +44,7 @@ html, body {
 
 body {
   color: theme(colors.foreground);
-  background: #FBF3D5;
+  background: #FFCCBC;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

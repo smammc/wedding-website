@@ -3,9 +3,16 @@ import Image from 'next/image'
 import Slideshow from './Slideshow'
 import { useState } from 'react'
 
+
+//Todo: Fotografias a cores
+//Todo: Imagens da nossa história iguais (chatgpt)
+//Todo: Imagem lateral mais estreita para mobile
+
+
 export default function Home() {
 
   const [formStatus, setFormStatus] = useState< 'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [showPlusOneName, setShowPlusOneName] = useState(false);
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -17,6 +24,8 @@ export default function Home() {
     const payload = {
       name: data.get('name'),
       attending: data.get('attending'),
+      plusOne: data.get('plusOne'),
+      plusOneName: data.get('plusOneName') || '',
       dietary: data.get('dietary'),
     }
 
@@ -44,7 +53,7 @@ export default function Home() {
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* Background side images */}
-      <div className="fixed top-0 left-0 w-1/10 md:w-1/6 lg:w-1/5 h-full">
+      <div className="fixed top-0 left-0 w-1/10 md:w-1/6 lg:w-1/5 h-full bg-white">
         <Image
           src="/IMG_1908-Photoroom.png"
           alt="Left Background"
@@ -55,7 +64,7 @@ export default function Home() {
         />
       </div>
 
-      <div className="fixed top-0 right-0 w-1/10 md:w-1/6 lg:w-1/5 h-full">
+      <div className="fixed top-0 right-0 w-1/10 md:w-1/6 lg:w-1/5 h-full bg-white">
         <Image
           src="/IMG_1908-Photoroom.png"
           alt="Right Background"
@@ -71,7 +80,7 @@ export default function Home() {
       </div>
 
       {/* The Wedding Section */}
-      <section className="mb-12 w-full max-w-5xl">
+      <section className="my-8 w-full max-w-5xl">
         <h1 className="mb-8 text-5xl font-bold text-center">Maria e Sebastião</h1>
         <h2 className="mb-4 text-3xl font-bold text-center">18 de Abril 2026</h2>
 
@@ -86,7 +95,7 @@ export default function Home() {
         </div>
 
         {/* Our Story Section */}
-        <section className="mb-12 w-full max-w-3xl mx-auto">
+        <section className="my-8 w-full max-w-3xl mx-auto">
           <h2 className="mb-6 text-3xl font-bold text-center">A Nossa História</h2>
           <div className="relative flex flex-col lg:flex-row justify-between items-center gap-8">
             {/* Conhecemos */}
@@ -142,7 +151,7 @@ export default function Home() {
       </section>
 
       <h2 className="mb-6 text-3xl font-bold text-center">Cerimónia e Recepção</h2>
-        <section className="mb-12 w-full max-w-2xl flex justify-center">
+        <section className="my-8 w-full max-w-2xl flex justify-center">
           <div className="flex flex-col lg:flex-row gap-8 justify-center items-center w-full">
             {/* Ceremony Card */}
             <div className="flex-1 flex flex-col bg-white rounded-xl shadow-lg border border-neutral-200 overflow-hidden w-[220px] md:w-[400px]">
@@ -200,7 +209,7 @@ export default function Home() {
         </section>
 
       <h2 className="mb-6 text-3xl font-bold text-center">Onde ficar</h2>
-        <section className="mb-12 w-full max-w-2xl flex justify-center">
+        <section className="my-8 w-full max-w-2xl flex justify-center">
           <div className="flex flex-col lg:flex-row gap-8 justify-center items-center w-full">
             {/* Hotel 1 */}
             <div className="flex-1 flex flex-col bg-white rounded-xl shadow-lg border border-neutral-200 overflow-hidden w-[220px] md:w-[400px]">
@@ -216,24 +225,15 @@ export default function Home() {
               </div>
               <div className="w-full flex flex-col justify-center p-4 gap-2">
                 <h3 className="text-xl font-bold mb-1">Hotel Dolce CampoReal</h3>
-                {/*<div className="text-base mb-1">18 de Abril de 2026, 14:30h</div>
-                <div className="text-base font-semibold mb-2">Igreja de São Quintino</div>*/}
-                <a
-                  href="https://www.booking.com/hotel/pt/dolce-camporeal-lisbon.pt-pt.html?chal_t=1760290295313&force_referer=https%3A%2F%2Fwww.google.com%2F"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block mt-2 px-3 py-1.5 rounded-lg bg-orange-300 text-white font-bold shadow hover:bg-orange-500 transition-colors text-sm"
-                >
-                  Ver no Booking.com
-                </a>
+                <div className="text-base font-semibold mb-2">15% de desconto ao indicar o nome dos noivos</div>
               </div>
             </div>
             {/* Hotel 2 */}
             <div className="flex-1 flex flex-col bg-white rounded-xl shadow-lg border border-neutral-200 overflow-hidden w-[220px] md:w-[400px]">
               <div className="w-full h-32 md:h-40 relative">
                 <Image
-                  src="/hotelCampoReal.jpg"
-                  alt="Quinta Nova do Hespanhol"
+                  src="/hotelStay.jpg"
+                  alt="Stay Hotel Torres Vedras Centro"
                   fill
                   className="object-cover w-full h-full"
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -241,41 +241,24 @@ export default function Home() {
                 />
               </div>
               <div className="w-full flex flex-col justify-center p-4 gap-2">
-                <h3 className="text-xl font-bold mb-1">Hotel 2</h3>
-                {/*<div className="text-base mb-1">18 de Abril de 2026</div>
-                <div className="text-base font-semibold mb-2">Quinta Nova do Hespanhol</div>*/}
-                <a
-                  href="https://maps.app.goo.gl/NF5n9PTDRVYd7aN29"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block mt-2 px-3 py-1.5 rounded-lg bg-orange-300 text-white font-bold shadow hover:bg-orange-500 transition-colors text-sm"
-                >
-                  Ver no Booking.com
-                </a>
+                <h3 className="text-xl font-bold mb-1">Stay Hotel</h3>
+                <div className="text-base font-semibold mb-2">15% de desconto ao indicar o nome dos noivos</div>
               </div>
             </div>
           </div>
         </section>
 
-      {/* Attaire */}
-      <section className="mb-12 w-full max-w-2xl flex justify-center flex-col items-center">
-        <h2 className="mb-4 text-3xl font-bold">Dresscode</h2>
-        <div className={"flex flex-col items-center justify-center w-full max-w-3xl mx-auto mt-10 mb-10 px-4 md:w-3/4 md:px-8 "}>
-        <p className="text-slate-700">
-          O traje para o casamento é formal. Sugerimos:
-        </p>
-        <ul className="list-inside list-disc text-slate-700">
-          <li>Homens: Fato escuro, camisa, gravata e sapatos formais.</li>
-          <li>Mulheres: Vestido de cocktail ou vestido longo.</li>
-        </ul>
-        </div>
-      </section>
-
       {/* FAQs */}
-      <section className="mb-12 w-full max-w-2xl flex justify-center flex-col items-center">
+      <section className="my-8 w-full max-w-2xl flex justify-center flex-col items-center">
         <h2 className="mb-4 text-3xl font-bold">Perguntas Frequentes</h2>
-        <div className={"flex flex-col items-center justify-center w-full max-w-3xl mx-auto mt-10 mb-10 px-4 md:w-3/4 md:px-8 "}>
+        <div className={"flex flex-col items-start justify-center w-full max-w-3xl mx-auto mt-10 mb-10 px-4 md:w-3/4 md:px-8 "}>
         <div className="mb-4">
+          <h3 className="text-xl font-semibold">Dresscode?</h3>
+          <p className="text-slate-700">
+            Fato escuro
+          </p>
+        </div>
+          <div className="mb-4">
           <h3 className="text-xl font-semibold">Há estacionamento disponível?</h3>
           <p className="text-slate-700">
             Sim, há estacionamento gratuito na Quinta Nova do Hespanhol.
@@ -291,7 +274,7 @@ export default function Home() {
       </section>
 
       {/* RSVP Section */}
-      <section className="mb-12 w-full max-w-2xl flex justify-center flex-col items-center">
+      <section className="my-8 w-full max-w-2xl flex justify-center flex-col items-center">
         <h2 className="mb-4 text-3xl font-bold">Confirmação de Presença (RSVP)</h2>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-1/2">
           <input name={"name"} type="text" placeholder="Nome" className="rounded border p-2" required />
@@ -300,6 +283,25 @@ export default function Home() {
             <option value="yes">Sim</option>
             <option value="no">Não</option>
           </select>
+          <select
+            name={"plusOne"}
+            className="rounded border p-2"
+            required
+            onChange={(e) => setShowPlusOneName(e.target.value === 'yes')}
+          >
+            <option value="">Vem acompanhado(a)?</option>
+            <option value="yes">Sim</option>
+            <option value="no">Não</option>
+          </select>
+          {showPlusOneName && (
+            <input
+              name={"plusOneName"}
+              type="text"
+              placeholder="Nome do acompanhante"
+              className="rounded border p-2"
+              required
+            />
+          )}
           <input name={"dietary"} type="text" placeholder="Restrições alimentares" className="rounded border p-2" />
           <button type="submit" className="rounded bg-orange-600 p-2 font-bold text-white">
             Enviar
@@ -311,31 +313,15 @@ export default function Home() {
         {formStatus === 'error' && <p className="mt-4 text-red-600">Ocorreu um erro. Por favor, tente novamente.</p>}
       </section>
 
-{/*      <section className="mb-12 w-full max-w-2xl">
-        <h2 className="mb-4 text-3xl font-bold">Confirmação de Presença (RSVP)</h2>
-        <iframe
-          src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAYAAMcdKolUMTJFQjNOV0tGWk5KRlE2TkQ5NTRYSkxPRS4u"
-          width="100%"
-          height="600"
-          style={{ border: 'none' }}
-          allowFullScreen
-          title="RSVP Form"
-        />
-      </section>*/}
-
       {/* Registry / Gifts Section */}
-      <section className="mb-12 w-full max-w-2xl  flex justify-center flex-col items-center">
+      <section className="my-8 w-full max-w-2xl  flex justify-center flex-col items-center">
         <h2 className="mb-4 text-3xl font-bold">Presentes</h2>
         <p>
-          <strong>Lista de presentes:</strong>{' '}
+          <strong>Contribuição para lua de mel</strong>{' '}
           <a href="#" className="text-pink-600 underline">
-            Ver lista
-          </a>
-        </p>
-        <p>
-          <strong>Fundo lua de mel:</strong>{' '}
-          <a href="#" className="text-pink-600 underline">
-            Contribuir
+            <ul className={"my-4"}>
+                <li>IBAN: PT50 0023 0000 45729440023 94</li>
+            </ul>
           </a>
         </p>
         <p>
@@ -344,7 +330,7 @@ export default function Home() {
       </section>
 
       {/* Gallery Section (optional) */}
-      <section className="mb-12 w-full max-w-2xl flex justify-center flex-col items-center">
+      <section className="my-8 w-full max-w-2xl flex justify-center flex-col items-center">
         <h2 className="mb-4 text-3xl font-bold">Galeria</h2>
         <p className="mt-4">Após o casamento, partilhe as suas fotos connosco!</p>
       </section>
