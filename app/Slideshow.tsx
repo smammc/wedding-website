@@ -39,7 +39,7 @@ export default function Slideshow() {
   // Don't render until mounted on client
   if (!mounted) {
     return (
-      <div className="relative w-full flex justify-center items-center max-w-[60%] sm:max-w-[60%] lg:max-w[100%] h-[140px] sm:h-[220px] md:h-[260px] slideshow-viewport overflow-hidden bg-white">
+      <div className="relative w-full flex justify-center items-center max-w-[60%] sm:max-w-[80%] lg:max-w[100%] h-[140px] sm:h-[220px] md:h-[260px] slideshow-viewport overflow-hidden bg-white">
         {/* Optional: Add a loading skeleton or nothing */}
       </div>
     )
@@ -49,7 +49,7 @@ export default function Slideshow() {
   const loopImages = [...allImages, ...allImages]
 
   return (
-    <div className="relative w-full flex justify-center items-center max-w-[80%] sm:max-w-[80%] lg:max-w[100%] h-[140px] sm:h-[220px] md:h-[260px] slideshow-viewport overflow-hidden bg-white">
+    <div className="relative w-full flex justify-center items-center max-w-[60%] sm:max-w-[80%] lg:max-w[100%] h-[140px] sm:h-[220px] md:h-[260px] slideshow-viewport overflow-hidden bg-white">
       <div
         className="flex items-center slideshow-loop"
         style={{
