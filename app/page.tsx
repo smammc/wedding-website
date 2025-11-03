@@ -3,12 +3,6 @@ import Image from 'next/image'
 import Slideshow from './Slideshow'
 import { useState } from 'react'
 
-
-//Todo: Fotografias a cores
-//Todo: Imagens da nossa história iguais (chatgpt)
-//Todo: Imagem lateral mais estreita para mobile
-
-
 export default function Home() {
 
   const [formStatus, setFormStatus] = useState< 'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -53,25 +47,28 @@ export default function Home() {
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* Background side images */}
-      <div className="fixed top-0 left-0 w-1/10 md:w-1/6 lg:w-1/5 h-full bg-white">
+      <div className="fixed top-0 left-0 w-1/8 md:w-1/6 lg:w-1/5 h-full bg-white overflow-hidden">
         <Image
-          src="/IMG_1908-Photoroom.png"
+          src="/doodle-wedding.png"
           alt="Left Background"
           fill
-          className="object-cover"
+          // className="object-cover"
+          className="object-fill"
           priority
-          style={{ objectPosition: "left",  }}
+          // style={{ objectPosition: "center",  }}
+          style={{ objectPosition: 'center', transform: 'scale(1, 1)', transformOrigin: 'left center' }}
+
         />
       </div>
 
-      <div className="fixed top-0 right-0 w-1/10 md:w-1/6 lg:w-1/5 h-full bg-white">
+      <div className="fixed top-0 right-0 w-1/8 md:w-1/6 lg:w-1/5 h-full bg-white">
         <Image
-          src="/IMG_1908-Photoroom.png"
+          src="/doodle-wedding.png"
           alt="Right Background"
           fill
-          className="object-cover"
+          className="object-fill"
           priority
-          style={{ objectPosition: "right",  }}
+          style={{ objectPosition: 'center', transform: 'scale(1, 1)', transformOrigin: 'left center' }}
         />
       </div>
     <main className="flex min-h-screen flex-col items-center justify-center p-8">
@@ -100,7 +97,7 @@ export default function Home() {
           <div className="relative flex flex-col lg:flex-row justify-between items-center gap-8">
             {/* Conhecemos */}
             <div className="flex flex-col items-center text-center flex-1 relative">
-              <div className="w-24 h-24 mb-2 relative rounded-full overflow-hidden bg-white shadow-md border-2 border-[#F6E7C1]">
+              <div className="w-40 h-40 mb-2 relative rounded-full overflow-hidden bg-white shadow-md border-2 border-[#F6E7C1]">
                 <Image
                   src="/meet.png"
                   alt="Quando nos conhecemos"
@@ -116,7 +113,7 @@ export default function Home() {
             </div>
             {/* Namoro */}
             <div className="flex flex-col items-center text-center flex-1 relative">
-              <div className="w-24 h-24 mb-2 relative rounded-full overflow-hidden bg-white shadow-md border-2 border-[#F6E7C1]">
+              <div className="w-40 h-40 mb-2 relative rounded-full overflow-hidden bg-white shadow-md border-2 border-[#F6E7C1]">
                 <Image
                   src="/date.jpeg"
                   alt="Começamos a namorar"
@@ -132,7 +129,7 @@ export default function Home() {
             </div>
             {/* Pedido */}
             <div className="flex flex-col items-center text-center flex-1">
-              <div className="w-24 h-24 mb-2 relative rounded-full overflow-hidden bg-white shadow-md">
+              <div className="w-40 h-40 mb-2 relative rounded-full overflow-hidden bg-white shadow-md">
                 <Image
                   src="/propose.jpeg"
                   alt="Pedido de casamento"
@@ -167,13 +164,13 @@ export default function Home() {
               </div>
               <div className="w-full flex flex-col justify-center p-4 gap-2">
                 <h3 className="text-xl font-bold mb-1">Cerimónia</h3>
-                <div className="text-base mb-1">18 de Abril de 2026, 14:30h</div>
+                <div className="text-base mb-1">18 de Abril de 2026, 15:00h</div>
                 <div className="text-base font-semibold mb-2">Igreja de São Quintino</div>
                 <a
                   href="https://maps.app.goo.gl/NdTXTuaLWozQAL5NA"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block mt-2 px-3 py-1.5 rounded-lg bg-orange-300 text-white font-bold shadow hover:bg-orange-500 transition-colors text-sm"
+                  className="inline-block mt-2 px-3 py-1.5 rounded-lg bg-green-600 text-white font-bold shadow hover:bg-green-700 transition-colors text-sm"
                 >
                   Ver no Google Maps
                 </a>
@@ -199,7 +196,7 @@ export default function Home() {
                   href="https://maps.app.goo.gl/NF5n9PTDRVYd7aN29"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block mt-2 px-3 py-1.5 rounded-lg bg-orange-300 text-white font-bold shadow hover:bg-orange-500 transition-colors text-sm"
+                  className="inline-block mt-2 px-3 py-1.5 rounded-lg bg-green-600 text-white font-bold shadow hover:bg-green-700 transition-colors text-sm"
                 >
                   Ver no Google Maps
                 </a>
@@ -251,7 +248,7 @@ export default function Home() {
       {/* FAQs */}
       <section className="my-8 w-full max-w-2xl flex justify-center flex-col items-center">
         <h2 className="mb-4 text-3xl font-bold">Perguntas Frequentes</h2>
-        <div className={"flex flex-col items-start justify-center w-full max-w-3xl mx-auto mt-10 mb-10 px-4 md:w-3/4 md:px-8 "}>
+        <div className={"flex flex-col items-start w-full max-w-3xl mx-auto mt-10 mb-10 px-20 md:w-3/4 md:px-8 "}>
         <div className="mb-4">
           <h3 className="text-xl font-semibold">Dresscode?</h3>
           <p className="text-slate-700">
@@ -275,8 +272,9 @@ export default function Home() {
 
       {/* RSVP Section */}
       <section className="my-8 w-full max-w-2xl flex justify-center flex-col items-center">
-        <h2 className="mb-4 text-3xl font-bold">Confirmação de Presença (RSVP)</h2>
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-1/2">
+        <h2 className="mb-4 text-3xl font-bold">Confirmação de Presença</h2>
+        <h2 className="mb-4 text-3xl font-bold">(RSVP)</h2>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-2/3">
           <input name={"name"} type="text" placeholder="Nome" className="rounded border p-2" required />
           <select name={"attending"} className="rounded border p-2" required>
             <option value="">Vai comparecer?</option>
@@ -303,7 +301,7 @@ export default function Home() {
             />
           )}
           <input name={"dietary"} type="text" placeholder="Restrições alimentares" className="rounded border p-2" />
-          <button type="submit" className="rounded bg-orange-600 p-2 font-bold text-white">
+          <button type="submit" className="rounded bg-green-600 p-2 font-bold text-white">
             Enviar
           </button>
         </form>
@@ -316,23 +314,13 @@ export default function Home() {
       {/* Registry / Gifts Section */}
       <section className="my-8 w-full max-w-2xl  flex justify-center flex-col items-center">
         <h2 className="mb-4 text-3xl font-bold">Presentes</h2>
-        <p>
           <strong>Contribuição para lua de mel</strong>{' '}
-          <a href="#" className="text-pink-600 underline">
-            <ul className={"my-4"}>
-                <li>IBAN: PT50 0023 0000 45729440023 94</li>
-            </ul>
-          </a>
+        <p className={"my-4"}>
+          IBAN: PT50 0023 0000 45729440023 94
         </p>
         <p>
-          <strong>Nota:</strong> A vossa presença é o melhor presente!
+          <strong> A vossa presença é o melhor presente!</strong>
         </p>
-      </section>
-
-      {/* Gallery Section (optional) */}
-      <section className="my-8 w-full max-w-2xl flex justify-center flex-col items-center">
-        <h2 className="mb-4 text-3xl font-bold">Galeria</h2>
-        <p className="mt-4">Após o casamento, partilhe as suas fotos connosco!</p>
       </section>
     </main>
     </div>

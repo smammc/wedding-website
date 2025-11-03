@@ -3,11 +3,11 @@ import Image from 'next/image'
 
   const images = [
     '/1.jpeg',
-    '/2.jpeg',
-    '/3.jpeg',
-    '/4.jpeg',
-    '/5.jpeg',
-    '/6.jpeg',
+    '/2_cores.jpeg',
+    '/5_cores.jpeg',
+    '/6_cores.jpeg',
+    '/7.png',
+    '/8.jpeg',
   ]
 
   function getFrameSize(width: number) {
@@ -35,7 +35,8 @@ import Image from 'next/image'
     const loopImages = [...allImages, ...allImages]
 
     return (
-      <div className="relative w-full flex justify-center items-center max-w-[60%] sm:max-w-[60%] lg:max-w[100%] h-[140px] sm:h-[220px] md:h-[260px] slideshow-viewport overflow-hidden bg-white">
+      <div className="relative w-full flex justify-center items-center max-w-[60%] sm:max-w-[60%] lg:max-w[100%] h-[140px] sm:h-[220px] md:h-[260px] slideshow-viewport overflow-hidden bg-white"
+      >
         <div
           className="flex items-center slideshow-loop"
           style={{
