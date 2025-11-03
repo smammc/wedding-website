@@ -1,7 +1,7 @@
 import type { ReactNode } from "react"
 import "./globals.css"
 import Image from "next/image"
-import backgroundImage from '../public/IMG_1930.JPG';
+import backgroundImage from '../public/IMG_1930.jpg';
 
 // Import Pompiere font from Google Fonts
 export const metadata = {
