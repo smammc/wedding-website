@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e237cbf-8562-44ff-bb4b-1d841cdb8169" name="Changes" comment="Completed page styling">
-      <change beforePath="$PROJECT_DIR$/lib/mongodb.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/mongodb.ts" afterDir="false" />
+    <list default="true" id="7e237cbf-8562-44ff-bb4b-1d841cdb8169" name="Changes" comment="Fixed images extension">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +124,7 @@
       <workItem from="1760885561437" duration="2844000" />
       <workItem from="1760969780235" duration="2332000" />
       <workItem from="1762094716483" duration="2181000" />
-      <workItem from="1762097346185" duration="6660000" />
+      <workItem from="1762097346185" duration="7557000" />
     </task>
     <task id="LOCAL-00001" summary="Added pictures">
       <option name="closed" value="true" />
@@ -189,7 +190,23 @@
       <option name="project" value="LOCAL" />
       <updated>1762171241054</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fixed mongodb connection">
+      <option name="closed" value="true" />
+      <created>1762171743572</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1762171743572</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Fixed filename">
+      <option name="closed" value="true" />
+      <created>1762171959541</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1762171959541</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,6 +220,9 @@
     <MESSAGE value="Added api to save rsvp" />
     <MESSAGE value="Styled the page and added plus one rsvp" />
     <MESSAGE value="Completed page styling" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed page styling" />
+    <MESSAGE value="Fixed mongodb connection" />
+    <MESSAGE value="Fixed filename" />
+    <MESSAGE value="Fixed images extension" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed images extension" />
   </component>
 </project>

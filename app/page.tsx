@@ -115,13 +115,13 @@ export default function Home() {
             <div className="flex flex-col items-center text-center flex-1 relative">
               <div className="w-40 h-40 mb-2 relative rounded-full overflow-hidden bg-white shadow-md border-2 border-[#F6E7C1]">
                 <Image
-                  src="/date.jpeg"
+                  src="/date.png"
                   alt="Começamos a namorar"
                   fill
                   className="object-cover"
                   sizes="96px"
                   priority
-                  style={{ objectFit: 'cover', objectPosition: 'bottom', scale: '2' }}
+                  style={{ objectFit: 'cover', objectPosition: 'bottom', scale: '1' }}
                 />
               </div>
               <div className="text-xl font-semibold mb-1">Começamos a namorar em...</div>
@@ -131,13 +131,13 @@ export default function Home() {
             <div className="flex flex-col items-center text-center flex-1">
               <div className="w-40 h-40 mb-2 relative rounded-full overflow-hidden bg-white shadow-md">
                 <Image
-                  src="/propose.jpeg"
+                  src="/propose.png"
                   alt="Pedido de casamento"
                   fill
                   className="object-cover"
                   sizes="96px"
                   priority
-                  style={{ objectFit: 'cover', objectPosition: 'right', scale: '1.2' }}
+                  style={{ objectFit: 'cover', objectPosition: 'right', scale: '0.85' }}
                 />
               </div>
               <div className="text-xl font-semibold mb-1">O SIM em...</div>
