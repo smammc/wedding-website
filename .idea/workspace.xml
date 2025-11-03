@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e237cbf-8562-44ff-bb4b-1d841cdb8169" name="Changes" comment="Fixed images extension">
+    <list default="true" id="7e237cbf-8562-44ff-bb4b-1d841cdb8169" name="Changes" comment="Fixed images">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +124,7 @@
       <workItem from="1760885561437" duration="2844000" />
       <workItem from="1760969780235" duration="2332000" />
       <workItem from="1762094716483" duration="2181000" />
-      <workItem from="1762097346185" duration="7557000" />
+      <workItem from="1762097346185" duration="8836000" />
     </task>
     <task id="LOCAL-00001" summary="Added pictures">
       <option name="closed" value="true" />
@@ -206,7 +206,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762171959541</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Fixed images">
+      <option name="closed" value="true" />
+      <created>1762172872568</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1762172872568</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,6 +231,7 @@
     <MESSAGE value="Fixed mongodb connection" />
     <MESSAGE value="Fixed filename" />
     <MESSAGE value="Fixed images extension" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed images extension" />
+    <MESSAGE value="Fixed images" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed images" />
   </component>
 </project>
