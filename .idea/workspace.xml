@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e237cbf-8562-44ff-bb4b-1d841cdb8169" name="Changes" comment="Added option to config">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="7e237cbf-8562-44ff-bb4b-1d841cdb8169" name="Changes" comment="Fixed slideshow width">
       <change beforePath="$PROJECT_DIR$/app/Slideshow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/Slideshow.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +123,7 @@
       <workItem from="1760885561437" duration="2844000" />
       <workItem from="1760969780235" duration="2332000" />
       <workItem from="1762094716483" duration="2181000" />
-      <workItem from="1762097346185" duration="12609000" />
+      <workItem from="1762097346185" duration="12922000" />
     </task>
     <task id="LOCAL-00001" summary="Added pictures">
       <option name="closed" value="true" />
@@ -224,7 +221,23 @@
       <option name="project" value="LOCAL" />
       <updated>1762174096088</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Corrected text and colours">
+      <option name="closed" value="true" />
+      <created>1762192694527</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1762192694527</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Fixed slideshow width">
+      <option name="closed" value="true" />
+      <created>1762192809587</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1762192809587</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,6 +256,8 @@
     <MESSAGE value="Fixed images extension" />
     <MESSAGE value="Fixed images" />
     <MESSAGE value="Added option to config" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added option to config" />
+    <MESSAGE value="Corrected text and colours" />
+    <MESSAGE value="Fixed slideshow width" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed slideshow width" />
   </component>
 </project>
