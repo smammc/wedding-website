@@ -57,7 +57,7 @@ body {
 }
 
 .polaroid-frame {
-  border: 3px solid #a5e6c5; /* soft, warm border close to #FBF3D5 */
+  border: 3px solid #87d69a; /* soft, warm border close to #FBF3D5 */
   border-radius: 22px 18px 28px 18px/18px 22px 18px 28px; /* playful, not perfectly round */
   box-shadow: 0 6px 24px 0 rgba(180, 160, 120, 0.13), 0 1.5px 6px 0 rgba(180, 160, 120, 0.09);
   background: #FFFDF7; /* slightly off-white for depth */
@@ -80,4 +80,9 @@ body {
 p, li {
   font-size: 1.25rem; /* Tailwind's text-lg, for better readability */
   line-height: 1.75rem; /* matches text-lg line height */
+}
+
+.presents {
+  font-size: 1rem;
+  line-height: 1.75rem;
 }

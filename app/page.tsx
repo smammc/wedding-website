@@ -86,7 +86,7 @@ export default function Home() {
         <div className={"flex flex-col items-center justify-center w-full max-w-3xl mx-auto mt-10 mb-10 px-4 md:w-3/4 md:px-8 "}>
         <p className="mb-8 text-center text-slate-700">
           Olá a todos!
-          Este é o nosso  oficial do casamento — a central de operações onde encontram tudo o que precisam para o grande dia.
+          Este é o nosso sítio oficial do casamento — a central de operações onde encontram tudo o que precisam de saber para o grande dia. <br/>
           Prometemos que não há testes surpresa nem dress code secreto (só muita festa, gargalhadas e talvez uns passos de dança duvidosos).
         </p>
         </div>
@@ -252,7 +252,7 @@ export default function Home() {
         <div className="mb-4">
           <h3 className="text-xl font-semibold">Dresscode?</h3>
           <p className="text-slate-700">
-            Fato escuro
+            Fato escuro com gravata
           </p>
         </div>
           <div className="mb-4">
@@ -315,8 +315,14 @@ export default function Home() {
       <section className="my-8 w-full max-w-2xl  flex justify-center flex-col items-center">
         <h2 className="mb-4 text-3xl font-bold">Presentes</h2>
           <strong>Contribuição para lua de mel</strong>{' '}
-        <p className={"my-4"}>
+        <p className={"my-4 presents"}>
           IBAN: PT50 0023 0000 45729440023 94
+        </p>
+        <p className={"my-4 presents"}>
+          MBWay Maria: +351 919 197 667
+        </p>
+        <p className={"my-4 presents"}>
+          MBWay Sebastião: +351 917 567 674
         </p>
         <p>
           <strong> A vossa presença é o melhor presente!</strong>
